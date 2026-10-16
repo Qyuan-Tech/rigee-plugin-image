@@ -1,0 +1,55 @@
+{
+  "name": "rigee-plugin-image",
+  "version": "1.0.0",
+  "private": true,
+  "description": "View images in Rigee — PNG, JPEG, GIF, WebP, AVIF, BMP and ICO — with zoom and pan.",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/Qyuan-Tech/rigee-plugin-image",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qyuan-Tech/rigee-plugin-image.git"
+  },
+  "packageManager": "pnpm@10.29.2",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc",
+    "release:pack": "pnpm run typecheck && pnpm run build && npm pack"
+  },
+  "devDependencies": {
+    "@rigee/plugin-api": "file:vendor/rigee-plugin-api-0.2.0.tgz",
+    "@types/node": "24.13.5",
+    "@types/react": "19.3.0",
+    "cordis": "4.0.0-rc.10",
+    "esbuild": "0.28.2",
+    "typescript": "5.9.3"
+  },
+  "rigee": {
+    "id": "image",
+    "version": "1.0.0",
+    "displayName": "Image Viewer",
+    "description": "View images — PNG, JPEG, GIF, WebP, AVIF, BMP and ICO — with zoom and pan.",
+    "apiVersion": 1,
+    "minAppVersion": "0.0.1-alpha.6",
+    "permissions": ["files:read"],
+    "main": "dist/main.js",
+    "renderer": "dist/renderer.js",
+    "contributes": {
+      "editors": [
+        {
+          "viewType": "image.preview",
+          "displayName": "Image Viewer",
+          "icon": "image",
+          "selector": {
+            "extensions": ["png", "apng", "jpg", "jpeg", "jpe", "jfif", "pjpeg", "pjp", "gif", "webp", "avif", "bmp", "ico", "cur"]
+          }
+        }
+      ]
+    }
+  }
+}
