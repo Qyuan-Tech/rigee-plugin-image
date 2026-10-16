@@ -1,6 +1,6 @@
 {
   "name": "rigee-plugin-image",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "View images in Rigee — PNG, JPEG, GIF, WebP, AVIF, BMP and ICO — with zoom and pan.",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "release:pack": "pnpm run typecheck && pnpm run build && npm pack"
   },
   "devDependencies": {
-    "@rigee/plugin-api": "file:vendor/rigee-plugin-api-0.2.0.tgz",
+    "@rigee/plugin-api": "^0.2.0",
     "@types/node": "24.13.5",
     "@types/react": "19.3.0",
     "cordis": "4.0.0-rc.10",
@@ -31,11 +31,11 @@
   },
   "rigee": {
     "id": "image",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "displayName": "Image Viewer",
     "description": "View images — PNG, JPEG, GIF, WebP, AVIF, BMP and ICO — with zoom and pan.",
     "apiVersion": 1,
-    "minAppVersion": "0.0.1-alpha.6",
+    "minAppVersion": "1.1.0",
     "permissions": ["files:read"],
     "main": "dist/main.js",
     "renderer": "dist/renderer.js",
